@@ -12,6 +12,7 @@
 #include "mibTreeObjTree.h"
 
 /* define */
+#define cSpace ' '
 #define null (0)
 #define SIZE_OF_CURRENT_TABLE 64
 #define SIZE_OF_SECTION_RECORD 1024
@@ -22,12 +23,13 @@
     if (ptr != NULL) {\
         const typeof( ((ConType *)(0))->member) *__mptr = ptr;\
         __RET_PTR__ = (ConType *)((char *)__mptr - offsetof(ConType, member));\
-    }
+    }\
 })
+
 
 /* Token Id Definition */
 #ifndef YYTOKENTYPE
-# define YYTOKENTYPE
+#define YYTOKENTYPE
 typedef enum yytokentype {
     IDENTIFIER = 258,
     OBJ_SPECIFIER = 259,
@@ -57,7 +59,7 @@ typedef enum yytokentype {
     FROM_ = 283,
     IMPORTS_ = 284
 } tokenType;
-#endif
+#endif /* YYTOKENTYPE */
 
 typedef enum unitType {
     OBJECT = 1,
